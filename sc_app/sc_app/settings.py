@@ -23,7 +23,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '3ctk$s@^uva)vso2i_q5e2n@eq7y62s3gie^=(ivubnjf&^hrx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +123,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
+STATIC_ROOT = "/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static"

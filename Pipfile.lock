@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "99c4b9ec1b8891ff787677276760beb6d6d4919c55660da1c713682156a6086c"
+            "sha256": "7f42bff2ba7fe51614322836a751ca6cf594ab0bd6c7130e07f11f3a9d29eb1f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,6 +30,21 @@
             ],
             "index": "pypi",
             "version": "==3.0.6"
+        },
+        "django-money": {
+            "hashes": [
+                "sha256:06507ac17aa0af548f241838bb0dd646bb5782ff2450be941b040f2857a97c1c",
+                "sha256:4ad7f5a82ccd24a6c0303173cc773b14cc9a51b3f0e6053bf25354282d1cf16d"
+            ],
+            "index": "pypi",
+            "version": "==1.1"
+        },
+        "py-moneyed": {
+            "hashes": [
+                "sha256:c6691b914a5e4b5b2335cf113620479a52cc82988c0e143435a7c5c7d60cd4ad",
+                "sha256:ec73795171919d537880a33c44d07fcdf0a5225e8368684fe02f0e75a6404742"
+            ],
+            "version": "==0.8.0"
         },
         "pytz": {
             "hashes": [
