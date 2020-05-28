@@ -123,4 +123,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     STATIC_DIR,
 ]
-STATIC_ROOT = "/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static"
+STATIC_ROOT = "Snowball_Creations/sc_app/static"
