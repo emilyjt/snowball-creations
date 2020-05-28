@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Client Dashboard</h1>
+
+<div class="container" id="totalpanel">
+  <div class="container" id="clientdetails">
+    <h3>Tudoo's details</h3>
+    <p><strong>Company:</strong> The Nature Boys</p>
+    <p><strong>Primary contact:</strong> Sean Walmsley</p>
+    <p><strong>Billing contact:</strong> Andrew Wallis</p>
+    <table>
+      <tr>
+        <th>Accounts</th>
+        <th>Services</th>
+        <th>Value</th>
+      </tr>
+      <tr>
+        <td>Tudoo_app</td>
+        <td>Linkedin Lead Gen</td>
+        <td>£500</td>
+      </tr>
+      <tr>
+        <td>Tudoo_app</td>
+        <td>Engagement Pod</td>
+        <td>£79</td>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <div class="container" id='resourcesandapps'>
+    <div class="row">
+      <div class="col" id='resourceslist'>
+        <h3>Resources</h3>
+        <div class="card">
+          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h6 class="card-title">How to Ace Instagram!</h6>
+            <small class="card-text" id='resourceandappcardtext'>Our complete guide on all the basics to advanced use of Instagram.</small>
+            <br><a href="#" class="btn btn-sm btn-outline-dark">Read here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col" id='appslist'>
+        <h3>Applications</h3>
+        <div class="card">
+          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h6 class="card-title">Hashtag Fiend</h6>
+            <small class="card-text" id='resourceandappcardtext'>Your helpful friend for all things hashtags!</small>
+            <br><a href="#" class="btn btn-sm btn-outline-dark">Click here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" id='resourceslist'>
+        <div class="card">
+          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h6 class="card-title">50 Ways to Make Money out of Insta</h6>
+            <small class="card-text" id='resourceandappcardtext'>Our guide to help you start making $$$ out of Insta</small>
+            <br><a href="#" class="btn btn-sm btn-outline-dark">Read here</a>
+          </div>
+        </div>
+      </div>
+      <div class="col" id='appslist'>
+        <div class="card">
+          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h6 class="card-title">Client Base</h6>
+            <small class="card-text" id='resourceandappcardtext'>For admin to see our lovely clients</small>
+            <br><a href="#" class="btn btn-sm btn-outline-dark">Click here</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container" id="clientdetails">
+    <h3>FAQs</h3>
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button id='faqbutton' class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              How to get in touch
+            </button>
+          </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h2 class="mb-0">
+            <button id='faqbutton' class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              How to change your package
+            </button>
+          </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h2 class="mb-0">
+            <button id='faqbutton' class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Unhappy about something
+            </button>
+          </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+          <div class="card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
+<!-- style="width: 18rem;" -->
