@@ -56,6 +56,7 @@ class Company(models.Model):
     url = models.URLField(max_length=400)
     primary_contact = models.ForeignKey(User, related_name='user_primary_contact', null=True, on_delete=models.CASCADE)
     secondary_contact = models.ForeignKey(User,  related_name='user_secondary_contact', null=True, on_delete=models.CASCADE)
+    tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, on_delete=models.CASCADE)
     subscriptions = models.ManyToManyField(Subscription)
     source = models.CharField(max_length=200)
 
