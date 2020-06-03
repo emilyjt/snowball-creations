@@ -32,6 +32,10 @@ class Service(models.Model):
     url = models.URLField(null=True)
     price = MoneyField(max_digits=19, decimal_places=4, default_currency='GBP')
 
+    def get_details(self):
+       return self.details [:100]
+    get_details.short_details = "details"
+
     class Meta:
         ordering = ['name', 'price']
 
@@ -60,8 +64,8 @@ class Company(models.Model):
     subscriptions = models.ManyToManyField(Subscription)
     source = models.CharField(max_length=200)
 
-    class Meta:
-        ordering = ['name']
+    # class Meta:
+    #     ordering = ['name']
 
     def __str__(self):
         return self.name
