@@ -23,7 +23,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = '3ctk$s@^uva)vso2i_q5e2n@eq7y62s3gie^=(ivubnjf&^hrx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -31,14 +31,16 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
+    'dashboard.apps.DashboardConfig',
+    'crispy_forms',
+    'djmoney',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dashboard',
-    'djmoney',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +126,11 @@ STATICFILES_DIRS = [
     STATIC_DIR,
 ]
 STATIC_ROOT = "Snowball_Creations/sc_app/static"
+
+MEDIA_ROOT = "Snowball_Creations/sc_app/media"
+
+CRIPSY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_URL = '/dashboard/index'
+
+LOGIN_REDIRECT_URL = 'dashboard'

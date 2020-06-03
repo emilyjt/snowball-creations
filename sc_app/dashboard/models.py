@@ -1,37 +1,66 @@
 from djmoney.models.fields import MoneyField
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
-class User(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField(max_length=200, unique=True)
+class SocialNetwork(models.Model):
+    name = models.CharField(max_length=200)
+    url = models.URLField()
+    logo = models.ImageField(upload_to=('sc_app/static/media/socialnetworklogos'))
 
-class Company(models.Model):
-    company_name = models.CharField(max_length=200)
-    company_url = models.URLField(max_length=400)
-    primary_contact = models.ForeignKey('User', on_delete=models.SET_NULL, null=True)
-    source = models.CharField(max_length=200)
+    class Meta:
+        ordering = ['name', 'logo', 'url']
 
-social_networks = (
-    ('Instagram','Instagram'),
-    ('Facebook','Facebook'),
-    ('Linkedin','Linkedin'),
-    ('Youtube','Youtube'),
-    ('Tiktok','Tiktok'),
-    ('Twitter','Twitter'),
-    ('Other','Other'),
-    )
+    def __str__(self):
+        return self.name
 
 class SocialProfile(models.Model):
     username = models.CharField(max_length=200)
-    social_url = models.URLField(max_length=500)
-    social_network = models.CharField(max_length=50, choices=social_networks, default='Instagram')
+    url = models.URLField(max_length=500)
+    network = models.ForeignKey(SocialNetwork, null=True, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['username', 'url', 'network']
+
+    def __str__(self):
+        return self.username
 
 class Service(models.Model):
     name = models.CharField(max_length=200)
+    details = models.TextField(max_length=1500, null=True)
+    url = models.URLField(null=True)
     price = MoneyField(max_digits=19, decimal_places=4, default_currency='GBP')
+
+    class Meta:
+        ordering = ['name', 'price']
+
+    def __str__(self):
+        return self.name
+
+class Subscription(models.Model):
+    social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
+    service_used = models.ForeignKey(Service, on_delete=models.CASCADE)
     date_started = models.DateTimeField(null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['social_profile', 'service_used']
+
+    def __str__(self):
+        return str(self.social_profile)
+
+class Company(models.Model):
+    name = models.CharField(max_length=200)
+    url = models.URLField(max_length=400)
+    primary_contact = models.ForeignKey(User, related_name='user_primary_contact', null=True, on_delete=models.CASCADE)
+    secondary_contact = models.ForeignKey(User,  related_name='user_secondary_contact', null=True, on_delete=models.CASCADE)
+    subscriptions = models.ManyToManyField(Subscription)
+    source = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name

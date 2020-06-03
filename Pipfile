@@ -10,6 +10,8 @@ django = "*"
 django-money = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-crispy-forms = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.8"
