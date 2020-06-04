@@ -131,6 +131,6 @@ MEDIA_ROOT = "Snowball_Creations/sc_app/media"
 
 CRIPSY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_URL = '/dashboard/index'
+LOGIN_URL = 'login'
 
 LOGIN_REDIRECT_URL = 'dashboard'

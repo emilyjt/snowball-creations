@@ -11,9 +11,18 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     return render(request, 'dashboard/index.html')
 
-# @login_required
+@login_required
 def dashboard(request):
-    return render(request, 'dashboard/dashboard.html')
+
+    # user = request.user
+
+    qs = request.user.UserProfile.Company.Subscriptions.objects.all()
+
+    context = {
+        'subscription_list': qs
+    }
+
+    return render(request, 'dashboard/dashboard.html', context)
 
 @login_required
 def user_logout(request):

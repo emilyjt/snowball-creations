@@ -9,15 +9,19 @@
 <div class="container" id="totalpanel">
   <div class="container" id="clientdetails">
     <h3>Tudoo's details</h3>
-    <p><strong>Company:</strong> The Nature Boys</p>
-    <p><strong>Primary contact:</strong> Sean Walmsley</p>
-    <p><strong>Billing contact:</strong> Andrew Wallis</p>
+    <p><strong>Company: </strong>{{ user.userprofile.company.name }}</p>
+    <p><strong>Primary contact: </strong>{{ user.userprofile.company.primary_contact }}</p>
+    <p><strong>Secondary contact: </strong>{{ user.userprofile.company.secondary_contact }}</p>
     <table>
       <tr>
         <th>Accounts</th>
         <th>Services</th>
         <th>Value</th>
       </tr>
+      <!-- {% for service in services %}
+        print(user.userprofile.company.subscriptions.all)
+
+      {% endfor %} -->
       <tr>
         <td>Tudoo_app</td>
         <td>Linkedin Lead Gen</td>
@@ -131,6 +135,12 @@
         </div>
       </div>
     </div>
+    <p>Can I try out the EP for a month?
+Is there any special deal if I go ahead with the EP and CP?
+How can I increase the number of my followers?
+I post twice a day on Instagram and my posts don’t seem to get 600 likes each
+What is the difference between Instagram Centre and Email Database Centre Competition?
+Who likes and comments on my posts?</p>
 </div>
 {% endblock %}
 <!-- style="width: 18rem;" -->
