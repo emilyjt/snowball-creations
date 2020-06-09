@@ -13,10 +13,8 @@ def index(request):
 
 @login_required
 def dashboard(request):
-
-    # user = request.user
-
-    qs = request.user.UserProfile.Company.Subscriptions.objects.all()
+    # print(request.user.userprofile.company.subscriptions.all())
+    qs = request.user.userprofile.company.subscriptions.all()
 
     context = {
         'subscription_list': qs

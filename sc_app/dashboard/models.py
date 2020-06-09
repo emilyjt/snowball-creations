@@ -30,7 +30,7 @@ class Service(models.Model):
     name = models.CharField(max_length=200)
     details = models.TextField(max_length=1500, null=True)
     url = models.URLField(null=True)
-    price = MoneyField(max_digits=19, decimal_places=4, default_currency='GBP')
+    price = MoneyField(max_digits=12, decimal_places=0, default_currency='GBP')
 
     def get_details(self):
        return self.details [:100]
@@ -57,11 +57,11 @@ class Subscription(models.Model):
 
 class Company(models.Model):
     name = models.CharField(max_length=200)
-    url = models.URLField(max_length=400)
+    url = models.URLField(max_length=400, null=True, blank=True)
     primary_contact = models.ForeignKey(User, related_name='user_primary_contact', null=True, on_delete=models.CASCADE)
-    secondary_contact = models.ForeignKey(User,  related_name='user_secondary_contact', null=True, on_delete=models.CASCADE)
-    tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, on_delete=models.CASCADE)
-    subscriptions = models.ManyToManyField(Subscription)
+    secondary_contact = models.ForeignKey(User,  related_name='user_secondary_contact', null=True, blank=True, on_delete=models.CASCADE)
+    tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, blank=True, on_delete=models.CASCADE)
+    subscriptions = models.ManyToManyField(Subscription, blank=True)
     source = models.CharField(max_length=200)
 
     # class Meta:

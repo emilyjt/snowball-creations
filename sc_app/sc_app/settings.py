@@ -127,7 +127,8 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = "Snowball_Creations/sc_app/static"
 
-MEDIA_ROOT = "Snowball_Creations/sc_app/media"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Snowball_Creations/sc_app/media')
+MEDIA_URL = '/media/'
 
 CRIPSY_TEMPLATE_PACK = 'bootstrap4'
 

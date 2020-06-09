@@ -8,79 +8,132 @@
 
 <div class="container" id="totalpanel">
   <div class="container" id="clientdetails">
-    <h3>Tudoo's details</h3>
-    <p><strong>Company: </strong>{{ user.userprofile.company.name }}</p>
-    <p><strong>Primary contact: </strong>{{ user.userprofile.company.primary_contact }}</p>
-    <p><strong>Secondary contact: </strong>{{ user.userprofile.company.secondary_contact }}</p>
+    <h3>{{ user.userprofile.company.name }}'s details</h3>
+    <div class="row">
+      <div class="col col-4 mx-auto">
+        <p><strong>Company: </strong><br>{{ user.userprofile.company.name }}</p>
+        <p><strong>Primary contact: </strong><br>{{ user.userprofile.company.primary_contact }}</p>
+        {% if user.userprofile.company.secondary_contact %}
+        <p><strong>Secondary contact: </strong><br>{{ user.userprofile.company.secondary_contact }}</p>
+        {% endif %}
+        {% if user.userprofile.company.tertiary_contact %}
+        <p><strong>Third contact: </strong><br>{{ user.userprofile.company.tertiary_contact }}</p>
+        {% endif %}
+      </div>
+      <div class="col col-4 mx-auto">
+        {% if user.userprofile.company.url %}
+        <p><strong>Website: </strong><br>{{ user.userprofile.company.url }}</p>
+        {% endif %}
+        <p><strong>Primary contact email: </strong><br>{{ user.userprofile.company.primary_contact.email }}</p>
+        {% if user.userprofile.company.secondary_contact.email %}
+        <p><strong>Secondary contact email: </strong><br>{{ user.userprofile.company.secondary_contact.email }}</p>
+        {% endif %}
+        {% if user.userprofile.company.tertiary_contact.email %}
+        <p><strong>Third contact email: </strong><br>{{ user.userprofile.company.tertiary_contact.email }}</p>
+        {% endif %}
+      </div>
+    </div>
     <table>
       <tr>
-        <th>Accounts</th>
-        <th>Services</th>
-        <th>Value</th>
+        <th id='subscription-list'>Accounts</th>
+        <th id='subscription-list'>Services</th>
+        <th id='subscription-list'>Value</th>
       </tr>
-      <!-- {% for service in services %}
-        print(user.userprofile.company.subscriptions.all)
-
-      {% endfor %} -->
+      {% for subscription in subscription_list %}
       <tr>
-        <td>Tudoo_app</td>
-        <td>Linkedin Lead Gen</td>
-        <td>£500</td>
+        <td id='subscription-list'>{{ subscription.social_profile }}</td>
+        <td id='subscription-list'>{{ subscription.service_used }}</td>
+        <td id='subscription-list'>{{ subscription.service_used.price }}</td>
       </tr>
-      <tr>
-        <td>Tudoo_app</td>
-        <td>Engagement Pod</td>
-        <td>£79</td>
-      </tr>
+      {% endfor %}
     </table>
   </div>
 
 
-
   <div class="container" id='resourcesandapps'>
     <div class="row">
-      <div class="col" id='resourceslist'>
-        <h3>Resources</h3>
-        <div class="card">
-          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h6 class="card-title">How to Ace Instagram!</h6>
-            <small class="card-text" id='resourceandappcardtext'>Our complete guide on all the basics to advanced use of Instagram.</small>
-            <br><a href="#" class="btn btn-sm btn-outline-dark">Read here</a>
+      <div class="col">
+         <div class="col" id='resourceslist'>
+          <h3>Resources</h3>
+          <div class="card" id='resourceandappcard'>
+            <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h6 class="card-title">How to Ace Instagram!</h6>
+              <small class="card-text" id='resourceandappcardtext'>
+                Our complete guide on all the basics to advanced use of Instagram. This
+                is the best place to start if you're trying to upgrade your social game!
+              </small>
+              <br><a href="https://docs.google.com/document/d/1-3C6hG_7SEo-WHNoesYsZzeVflC-GaQ05l93mEkkbVY/edit?usp=sharing" class="btn btn-sm btn-dark" target="_blank">Read here</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col" id='appslist'>
-        <h3>Applications</h3>
-        <div class="card">
-          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h6 class="card-title">Hashtag Fiend</h6>
-            <small class="card-text" id='resourceandappcardtext'>Your helpful friend for all things hashtags!</small>
-            <br><a href="#" class="btn btn-sm btn-outline-dark">Click here</a>
+        <div class="col" id='resourceslist'>
+          <div class="card" id='resourceandappcard'>
+            <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h6 class="card-title">50 Ways to Make Money out of Insta</h6>
+              <small class="card-text" id='resourceandappcardtext'>
+                A social following can deliver a huge financial return! For you to tap into this
+                it just needs some hard work, attention and testing to figure it out for yourself. The first part
+                of that is just coming up with some ideas to actually test! So that’s the focus of this guide.
+              </small>
+              <br><a href="https://docs.google.com/document/d/1Gbstur3GQTtEq_Z_6XRbh1XVTWscDUfV-UKkLN2fRBw/edit?usp=sharing" class="btn btn-sm btn-dark" target="_blank">Read here</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col" id='resourceslist'>
-        <div class="card">
-          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h6 class="card-title">50 Ways to Make Money out of Insta</h6>
-            <small class="card-text" id='resourceandappcardtext'>Our guide to help you start making $$$ out of Insta</small>
-            <br><a href="#" class="btn btn-sm btn-outline-dark">Read here</a>
+        <div class="col" id='resourceslist'>
+          <div class="card" id='resourceandappcard'>
+            <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h6 class="card-title">10 actionable strategies to 10x Insta follower growth!</h6>
+              <small class="card-text" id='resourceandappcardtext'>
+                Deliver on these 10 simple strategies and alongside the work the Nature Boys will do for you,
+                we’ll blast past your average growth figures and build a powerful follower base to transform
+                you and your business! 🚀🚀🚀</small>
+              <br><a href="https://docs.google.com/document/d/1XzBtYhOe2XiwSsR3EurUkl7GLhePy7RZs8aPuwosONI/edit?usp=sharing" class="btn btn-sm btn-dark" target="_blank">Read here</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col" id='appslist'>
-        <div class="card">
-          <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
-          <div class="card-body">
-            <h6 class="card-title">Client Base</h6>
-            <small class="card-text" id='resourceandappcardtext'>For admin to see our lovely clients</small>
-            <br><a href="#" class="btn btn-sm btn-outline-dark">Click here</a>
+        <div class="col" id='resourceslist'>
+          <div class="card" id='resourceandappcard'>
+            <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h6 class="card-title">10 actions to amplify Youtube Subscriber growth!</h6>
+              <small class="card-text" id='resourceandappcardtext'>
+                Deliver on these 10 quick and easy strategies and alongside the work the Nature Boys will do
+                for you, we’ll blast past our average growth figures and build a powerful subscriber base to
+                transform you and your business!
+              </small>
+              <br><a href="https://docs.google.com/document/d/1ricAZtXtaXixcrr-gMfrzZU0pgaWgtiFIF1u-CgNdro/edit?usp=sharing" class="btn btn-sm btn-dark" target="_blank">Read here</a>
+            </div>
           </div>
+        </div>
+       </div>
+      <div class="col">
+        <div class="col" id='resourceslist'>
+          <h3>Applications</h3>
+          <div class="card" id='resourceandappcard'>
+            <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+            <div class="card-body">
+              <h6 class="card-title">Hashtag Fiend</h6>
+              <small class="card-text" id='resourceandappcardtext'>Your helpful friend for all things hashtags!</small>
+              <br><a href="#" class="btn btn-sm btn-outline-dark">Coming soon...</a>
+            </div>
+          </div>
+          {% if request.user.is_superuser %}
+          <div class="col">
+            <div class="col" id='resourceslist'>
+              <div class="card" id='resourceandappcard'>
+                <!-- <img src="/Users/maxsinclair/Documents/webdev/python/Snowball_Creations/sc_app/static/images/instagram.jpeg" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h6 class="card-title">Client Base</h6>
+                  <small class="card-text" id='resourceandappcardtext'>For admin to see our lovely clients</small>
+                  <br><a href="#" class="btn btn-sm btn-dark">Click here</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -90,22 +143,24 @@
 
   <div class="container" id="clientdetails">
     <h3>FAQs</h3>
-    <div class="accordion" id="accordionExample">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h2 class="mb-0">
-            <button id='faqbutton' class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              How to get in touch
-            </button>
-          </h2>
-        </div>
 
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-          <div class="card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    <div class="accordion" id="accordionExample">
+      <div class="accordion" id="accordionExample">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+              <button id='faqbutton' class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How to get in touch
+              </button>
+            </h2>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
           </div>
         </div>
-      </div>
+
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h2 class="mb-0">
@@ -120,6 +175,7 @@
           </div>
         </div>
       </div>
+
       <div class="card">
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
@@ -135,12 +191,6 @@
         </div>
       </div>
     </div>
-    <p>Can I try out the EP for a month?
-Is there any special deal if I go ahead with the EP and CP?
-How can I increase the number of my followers?
-I post twice a day on Instagram and my posts don’t seem to get 600 likes each
-What is the difference between Instagram Centre and Email Database Centre Competition?
-Who likes and comments on my posts?</p>
 </div>
 {% endblock %}
 <!-- style="width: 18rem;" -->
