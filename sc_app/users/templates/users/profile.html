@@ -3,7 +3,6 @@
 {% block content %}
 <div class="content-section" id="totalpanel">
   <div class="media">
-    <img class="rounded-circle" src="{{ user.userprofile.image.url }}">
     <div class="media-body">
       <h2 class="account-heading">{{ user.username }}</h2>
       <p class="text-secondary">{{ user.email }}</p>
@@ -14,7 +13,6 @@
     <fieldset class="form-group">
       <legend class="border-bottom mb-4">Profile info</legend>
       {{ u_form|crispy }}
-      {{ p_form|crispy }}
       {{ c_form|crispy }}
     </fieldset>
     <div class="form-group">
