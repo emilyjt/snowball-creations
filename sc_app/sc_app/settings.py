@@ -125,7 +125,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-# STATIC_ROOT = 'Snowball_Creations/sc_app/static'
+STATIC_ROOT = 'Snowball_Creations/sc_app/static'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Snowball_Creations/sc_app/media')
 MEDIA_URL = '/media/'
