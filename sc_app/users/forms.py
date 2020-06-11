@@ -19,11 +19,11 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ['username', 'email']
 
-class ProfileUpdateForm(forms.ModelForm):
-
-    class Meta:
-        model = UserProfile
-        fields = ['image']
+# class ProfileUpdateForm(forms.ModelForm):
+#
+#     class Meta:
+#         model = UserProfile
+#         fields = ['image']
 
 class CompanyUpdateForm(forms.ModelForm):
 
