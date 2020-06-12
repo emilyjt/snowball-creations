@@ -39,13 +39,15 @@
         <th id='subscription-list'>Services</th>
         <th id='subscription-list'>Value</th>
       </tr>
-      {% for subscription in subscription_list %}
-      <tr>
-        <td id='subscription-list'>{{ subscription.social_profile }}</td>
-        <td id='subscription-list'>{{ subscription.service_used }}</td>
-        <td id='subscription-list'>{{ subscription.service_used.price }}</td>
-      </tr>
-      {% endfor %}
+      {% if user.userprofile.company.subscription %}
+        {% for subscription in subscription_list %}
+          <tr>
+            <td id='subscription-list'>{{ subscription.social_profile }}</td>
+            <td id='subscription-list'>{{ subscription.service_used }}</td>
+            <td id='subscription-list'>{{ subscription.service_used.price }}</td>
+          </tr>
+        {% endfor %}
+      {% endif %}
     </table>
   </div>
 
