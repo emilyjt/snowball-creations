@@ -1,1 +1,1 @@
-web: gunicorn Snowball_Creations.wsgi
+web: gunicorn sc_app.wsgi
