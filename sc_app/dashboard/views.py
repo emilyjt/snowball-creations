@@ -14,7 +14,10 @@ def index(request):
 @login_required
 def dashboard(request):
     # print(request.user.userprofile.company.subscriptions.all())
-    qs = request.user.userprofile.company.subscriptions.all()
+    try:
+        qs = request.user.userprofile.company.subscriptions.all()
+    except:
+        pass
 
 
     context = {
