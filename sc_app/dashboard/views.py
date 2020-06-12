@@ -17,7 +17,7 @@ def dashboard(request):
     try:
         qs = request.user.userprofile.company.subscriptions.all()
     except:
-        pass
+        qs = None
 
 
     context = {
