@@ -16,6 +16,7 @@ def dashboard(request):
     # print(request.user.userprofile.company.subscriptions.all())
     qs = request.user.userprofile.company.subscriptions.all()
 
+
     context = {
         'subscription_list': qs
     }
