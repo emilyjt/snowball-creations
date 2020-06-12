@@ -39,7 +39,7 @@
         <th id='subscription-list'>Services</th>
         <th id='subscription-list'>Value</th>
       </tr>
-      {% if user.userprofile.company.subscription %}
+      {% if subscription %}
         {% for subscription in subscription_list %}
           <tr>
             <td id='subscription-list'>{{ subscription.social_profile }}</td>
