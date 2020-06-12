@@ -61,7 +61,7 @@ class Company(models.Model):
     primary_contact = models.ForeignKey(User, related_name='user_primary_contact', null=True, on_delete=models.CASCADE)
     secondary_contact = models.ForeignKey(User,  related_name='user_secondary_contact', null=True, blank=True, on_delete=models.CASCADE)
     tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, blank=True, on_delete=models.CASCADE)
-    subscriptions = models.ManyToManyField(Subscription, null=True, blank=True)
+    subscriptions = models.ManyToManyField(Subscription, blank=True)
     source = models.CharField(max_length=200)
 
     # class Meta:
