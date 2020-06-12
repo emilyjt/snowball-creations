@@ -1,1 +1,1 @@
-web: gunicorn sc_app.wsgi.py
+web: gunicorn app:sc_app.wsgi.py
