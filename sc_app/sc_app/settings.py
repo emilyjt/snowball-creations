@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+email_user = os.environ.get('EMAIL_USER')
+email_pass = os.environ.get('EMAIL_PASS')
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
@@ -20,12 +23,13 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '3ctk$s@^uva)vso2i_q5e2n@eq7y62s3gie^=(ivubnjf&^hrx'
+# SECRET_KEY = '3ctk$s@^uva)vso2i_q5e2n@eq7y62s3gie^=(ivubnjf&^hrx'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['snowball-creations.herokuapp.com']
 
 
 # Application definition
@@ -139,5 +143,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'max@wearethenatureboys.com'
-EMAIL_HOST_PASSWORD = 'Stchris1'
+EMAIL_HOST_USER = 'email_user'
+EMAIL_HOST_PASSWORD = 'email_pass'
