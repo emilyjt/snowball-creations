@@ -24,7 +24,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '3ctk$s@^uva)vso2i_q5e2n@eq7y62s3gie^=(ivubnjf&^hrx'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Snowball_Creations.settings')
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
