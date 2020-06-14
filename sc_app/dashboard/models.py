@@ -45,7 +45,7 @@ class Service(models.Model):
 class Subscription(models.Model):
     social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
     service_used = models.ForeignKey(Service, on_delete=models.CASCADE)
-    date_started = models.DateTimeField(null=True)
+    date_started = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -53,7 +53,7 @@ class Subscription(models.Model):
         ordering = ['social_profile', 'service_used']
 
     def __str__(self):
-        return str(self.social_profile)
+        return str(self.social_profile)+str(' + ')+str(self.service_used)
 
 class Company(models.Model):
     name = models.CharField(max_length=200)
