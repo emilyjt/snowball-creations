@@ -22,11 +22,14 @@
           </div>
         {% endfor %}
       {% endif %}
-      
+
       {% block content %}
 
-      {% endblock %}
+      {% endblock content %}
     </div>
     {% include 'js.html' %}
   </body>
+  <footer>
+      {% include 'footer.html' %}
+  </footer>
 </html>
