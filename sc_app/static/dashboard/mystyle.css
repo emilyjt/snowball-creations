@@ -6,7 +6,6 @@ body, html {
 }
 
 body {
-  padding-top: 100px;
   background: url("/static/images/mountainview.jpg") no-repeat;
   background-position: center;
   background-size: cover;
@@ -17,10 +16,9 @@ body {
   background-attachment: fixed;
 }
 
-nav {
-  height: 90px;
-  margin-bottom: 30px;
-  padding: 20px;
+.container-fluid {
+  padding-top: 160px;
+  padding-bottom: 250px;
 }
 
 h1 {
@@ -36,6 +34,16 @@ h3 {
   margin: 20px auto 20px auto;
 }
 
+/* NAVIGATION BAR  */
+
+.total-navbar {
+  padding-bottom: 10px;
+  /* position:relative; */
+}
+
+.second-level-navbar {
+  padding: 5px 0px 5px 0px;
+}
 
 
 /* LOGIN PAGE SECTION */
