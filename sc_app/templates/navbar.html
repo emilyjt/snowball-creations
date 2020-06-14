@@ -18,26 +18,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mx-auto">
         {% if user.is_authenticated %}
-          <li class="nav-item mx-auto">
-            <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
-          </li>
+          <strong>
+            <li class="nav-item mx-auto">
+              <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
+            </li>
+          </strong>
         {% endif %}
-        <li class="nav-item mx-auto">
-          <a class="nav-link" href="https://wearethenatureboys.com/">Back to main website</a>
-        </li>
+          <strong>
+            <li class="nav-item mx-auto">
+              <a class="nav-link" href="https://wearethenatureboys.com/">Back to main website</a>
+            </li>
+          </strong>
       </ul>
       <ul class="navbar-nav mx-auto">
         {% if user.is_authenticated %}
+          <strong>
           <li class="nav-item mx-auto">
             <a class="nav-link" href="{% url 'profile' %}">Profile</a>
           </li>
+          </strong>
+          <strong>
           <li class="nav-item mx-auto">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
+          </strong>
         {% else %}
+          <strong>
           <li class="nav-item mx-auto">
             <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>
+          </strong>
         {% endif %}
       </ul>
     </div>
