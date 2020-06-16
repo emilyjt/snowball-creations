@@ -40,7 +40,7 @@ class Service(models.Model):
         ordering = ['name', 'price']
 
     def __str__(self):
-        return self.name
+        return str(self.name)+str(self.price)
 
 class Subscription(models.Model):
     social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
