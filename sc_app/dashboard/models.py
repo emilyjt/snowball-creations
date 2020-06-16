@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class SocialNetwork(models.Model):
     name = models.CharField(max_length=200)
     url = models.URLField()
-    logo = models.ImageField(upload_to=('sc_app/static/media/socialnetworklogos'))
+    logo = models.ImageField(upload_to=('sc_app/static/media/socialnetworklogos'), null=True, blank=True)
 
     class Meta:
         ordering = ['name', 'logo', 'url']
