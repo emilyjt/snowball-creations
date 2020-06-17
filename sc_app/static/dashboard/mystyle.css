@@ -27,19 +27,56 @@ body {
 
 h1 {
   color: white;
-  font-weight: bolder;
   text-align: center;
+  width: 500px;
   padding: 20px 0px 20px 10px;
+  border: 0px;
+  margin: 20px auto 10px auto;
+  background-color: #304052;
+  font-weight: 400;
+  font-family: 'Circe Bold';
+  letter-spacing: 0.1em;
 }
 
 h3 {
   text-align: center;
-  font-weight: bolder;
   margin: 20px auto 20px auto;
+  background-color: #304052;
+  font-weight: 300;
+  padding: 8px 0px 8px 0px;
+  color: white;
+  width: 70%;
+  font-family: 'Circe Bold';
+  letter-spacing: 0.05em;
 }
 
 h6 {
-  font-weight: bold;
+  background-color: #304052;
+  font-weight: 600;
+  color: white;
+  padding: 6px 0px 6px 0px;
+  width: 70%;
+  margin: auto;
+  font-family: 'Circe Bold';
+
+}
+
+p, td, small {
+  font-family: 'Circe Light';
+}
+
+a {
+  color: #384052;
+  font-family: 'Circe Light';
+  font-weight: 600;
+}
+
+.btn {
+  background-color: #B3d8DB;
+  color: black;
+  border: 0px;
+  font-weight: 500;
+  padding: 7px 17px 7px 17px;
 }
 
 /* NAVIGATION BAR  */
@@ -49,8 +86,16 @@ h6 {
   /* position:relative; */
 }
 
+.logo-navbar {
+  background: rgba(56, 64, 82, 1);
+}
+
 .second-level-navbar {
   padding: 5px 0px 5px 0px;
+  background-color: #B3d8DB;
+  color: black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid rgba(56, 64, 82, 1);
 }
 
 .footer {
@@ -62,21 +107,24 @@ h6 {
   text-align: center;
 }
 
-.footer p, a {
+p.site-footer {
   text-align: center;
-  padding: 10px;
+  padding: 14px;
   margin: 0px;
-  color: rgba(0, 0, 0, 0.5);
+  background: rgba(56, 64, 82, 1);
+  color: white;
   font-weight: bold;
+  border-top: 1px solid black;
 }
-
+a.site-footer {
+  color: white;
+}
 
 /* LOGIN PAGE SECTION */
 
 #loginform {
   width: 50%;
   background-color: white;
-  opacity: 85%;
   border: 1px solid black;
   margin: 20px auto 20px auto;
   padding: 30px;
@@ -100,7 +148,6 @@ h6 {
 
 
 
-
 /* DASHBOARD CSS SECTION  */
 
 #faqbutton {
@@ -109,7 +156,6 @@ h6 {
 
 #totalpanel {
   background-color: white;
-  opacity: 85%;
   border: 1px solid black;
 }
 
@@ -162,9 +208,10 @@ h6 {
   padding: 2px;
   margin: 10px auto 10px auto;
   text-align: center;
-  opacity: 85%;
   border: 1px solid black;
 }
+
+/* FAQ SECTION OF DASHBOARD */
 
 #faq-text {
   width: 90%;
@@ -184,4 +231,8 @@ h6 {
   transform: translateX(-8px);
   fill: #319795;
   transition: 0.6s ease-in-out;
+}
+
+.faq-button {
+  background-color: transparent;
 }

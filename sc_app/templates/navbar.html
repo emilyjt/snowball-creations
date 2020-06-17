@@ -1,17 +1,17 @@
 {% load static %}
 <nav class="fixed-top total-navbar">
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light logo-navbar">
     {% if user.is_authenticated %}
     <a class="navbar-brand mx-auto" href="{% url 'dashboard' %}">
-      <img class="max-width: 80%" src="{% static "/images/snowball_logo_main.png" %}" width="auto" height="75" alt="logo">
+      <img class="max-width: 80%" src="{% static "/images/snowball_logo_white.png" %}" width="auto" height="75" alt="logo">
     </a>
     {% else %}
     <a class="navbar-brand mx-auto" href="{% url 'login' %}">
-      <img src="{% static "/images/snowball_logo_main.png" %}" width="auto" height="75" alt="logo">
+      <img src="{% static "/images/snowball_logo_white.png" %}" width="auto" height="75" alt="logo">
     </a>
     {% endif %}
   </nav>
-  <nav class="nav navbar-expand-lg navbar-light bg-light second-level-navbar">
+  <nav class="nav navbar-expand-lg second-level-navbar">
     <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
