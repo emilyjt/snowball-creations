@@ -40,7 +40,7 @@ class Service(models.Model):
         ordering = ['name', 'price']
 
     def __str__(self):
-        return str(self.name)+str(self.price)
+        return str(self.name)+str(' @ ')+str(self.price)[2:]
 
 class Subscription(models.Model):
     social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
@@ -53,7 +53,7 @@ class Subscription(models.Model):
         ordering = ['social_profile', 'service_used']
 
     def __str__(self):
-        return str(self.social_profile)+str(' + ')+str(self.service_used)+str(self.service_used.price)
+        return str(self.social_profile)+str(' + ')+str(self.service_used)
 
 class Company(models.Model):
     name = models.CharField(max_length=200)

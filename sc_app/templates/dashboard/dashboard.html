@@ -36,7 +36,7 @@
       <tr>
         <th id='subscription-list'>Social Accounts</th>
         <th id='subscription-list'>Services</th>
-        <th id='subscription-list'>Value</th>
+        <th id='subscription-list'>Information</th>
       </tr>
       {% if subscription_list is None %}
         <p>No subscriptions</p>
@@ -45,7 +45,7 @@
           <tr>
             <td id='subscription-list'>{{ subscription.social_profile }}</td>
             <td id='subscription-list'>{{ subscription.service_used }}</td>
-            <td id='subscription-list'>{{ subscription.service_used.price }}</td>
+            <td id='subscription-list'><a href="{{ subscription.service_used.url }}">Click for info</a></td>
           </tr>
         {% endfor %}
       {% endif %}
