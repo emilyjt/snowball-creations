@@ -93,6 +93,26 @@ a {
   background: rgba(56, 64, 82, 1);
 }
 
+/* Small Devices, Tablets */
+@media only screen and (max-width : 991px) {
+
+.navbar-toggler {
+  background-color: rgba(56, 64, 82, 1);
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.second-level-navbar a {
+  text-align: center;
+}
+
+
+
+}
+
 .second-level-navbar {
   padding: 5px 0px 5px 0px;
   background-color: #B3d8DB;
