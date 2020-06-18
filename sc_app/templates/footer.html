@@ -1,1 +1,1 @@
-  <p class="site-footer">Copyright Snowball Creations Limited | <a class='site-footer' href="{% url 'dashboard' %}">Dashboard</a> | <a class='site-footer' href="www.wearethenatureboys.com">Back to Main Site</a></p>
+  <p class="site-footer">Copyright Snowball Creations Limited {% if user.is_authenticated %}| <a class='site-footer' href="{% url 'dashboard' %}">Dashboard</a> {% endif %} | <a class='site-footer' href="https://snowballcreations.com/">Back to Main Site</a></p>
