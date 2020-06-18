@@ -38,6 +38,7 @@ ALLOWED_HOSTS = ['snowball-creations.herokuapp.com']
 INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'dashboard.apps.DashboardConfig',
+    'client_base.apps.ClientBaseConfig',
     'crispy_forms',
     'djmoney',
     'django.contrib.admin',

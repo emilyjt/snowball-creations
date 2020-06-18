@@ -20,10 +20,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from dashboard import views as dashboard_views
 from users import views as user_views
+from client_base import views as client_base_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('dashboard.urls')),
+    path('client_base/', include('client_base.urls')),
     path('register/', user_views.register, name='register'),
     path('', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),

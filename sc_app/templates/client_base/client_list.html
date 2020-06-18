@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Client Base</h1>
+
+<div class="container" id="totalpanel">
+    {% for company in object_list %}
+      <div class="row mx-auto">
+        <div class="col">
+          <td>{{ company.id }}</td>
+        </div>
+        <div class="col">
+          <td>{{ company.name }}</td>
+        </div>
+        <div class="col"
+          <td>{{ company.primary_contact.username }}</td>
+        </div>
+        <div class="col"
+          <td>{{ company.primary_contact.email }}</td>
+        </div>
+        <div class="col"
+          <td>{{ company.subscription.service }}</td>
+        </div>
+      </div>
+      {% endfor %}
+
+</div>
+
+{% endblock content %}
