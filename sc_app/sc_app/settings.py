@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Snowball_Creations
 # SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['snowball-creations.herokuapp.com']
 
