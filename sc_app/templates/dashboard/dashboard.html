@@ -8,7 +8,7 @@
   <div class="container" id="clientdetails">
     <h3>{{ user.userprofile.company.name }}'s Details</h3>
     <div class="row">
-      <div class="col col-4 mx-auto">
+      <div class="col col-4 mx-auto client-info-links">
         <p><strong>Company: </strong><br>{{ user.userprofile.company.name }}</p>
         <p><strong>Primary contact: </strong><br>{{ user.userprofile.company.primary_contact }}</p>
         {% if user.userprofile.company.secondary_contact %}
@@ -18,7 +18,7 @@
         <p><strong>Third contact: </strong><br>{{ user.userprofile.company.tertiary_contact }}</p>
         {% endif %}
       </div>
-      <div class="col col-4 mx-auto">
+      <div class="col col-4 mx-auto client-info-links">
         {% if user.userprofile.company.url %}
         <p><strong>Website: </strong><br>{{ user.userprofile.company.url }}</p>
         {% else %}

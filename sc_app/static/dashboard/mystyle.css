@@ -96,22 +96,20 @@ a {
 /* Small Devices, Tablets */
 @media only screen and (max-width : 991px) {
 
-.navbar-toggler {
-  background-color: rgba(56, 64, 82, 1);
-}
+  .navbar-toggler {
+    background-color: rgba(56, 64, 82, 1);
+  }
 
-.navbar-toggler .icon-bar {
-  background-color: transparent;
-  background: url("/static/images/white-burger-menu.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+  .navbar-toggler .icon-bar {
+    background-color: transparent;
+    background: url("/static/images/white-burger-menu.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
-.second-level-navbar a {
-  text-align: center;
-}
-
-
+  .second-level-navbar a {
+    text-align: center;
+  }
 
 }
 
@@ -188,6 +186,7 @@ a.site-footer {
   border: 1px solid black;
   margin: 10px auto 10px auto;
   padding-top: 10px;
+  max-width: 100%;
 
 }
 
@@ -198,6 +197,27 @@ a.site-footer {
   width: 80%;
   margin: 10px auto 20px auto;
 }
+
+.client-info-links p {
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width : 991px) {
+
+  .client-info-links p {
+    font-size: 0.8em;
+  }
+
+}
+
+@media only screen and (max-width : 376px) {
+
+  .client-info-links p {
+    font-size: 0.4em;
+  }
+
+}
+
 
 #subscription-list {
   border: 10px 0px 10px 0px;
