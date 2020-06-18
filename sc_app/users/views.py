@@ -19,20 +19,20 @@ def register(request):
 @login_required
 def profile(request):
     if request.method == 'POST':
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        c_form = CompanyUpdateForm(request.POST, instance=request.user.userprofile.company)
-        if u_form.is_valid() and c_form.is_valid():
-            u_form.save()
-            c_form.save()
+        user_form = UserUpdateForm(request.POST, instance=request.user)
+        company_form = CompanyUpdateForm(request.POST, instance=request.user.userprofile.company)
+        if user_form.is_valid() and company_form.is_valid():
+            user_form.save()
+            company_form.save()
             messages.success(request, f'Your account has been updated!')
             return redirect('profile')
     else:
-        u_form = UserUpdateForm(instance=request.user)
-        c_form = CompanyUpdateForm(instance=request.user.userprofile.company)
+        user_form = UserUpdateForm(instance=request.user)
+        company_form = CompanyUpdateForm(instance=request.user.userprofile.company)
 
     context = {
-        'u_form': u_form,
-        'c_form': c_form,
+        'user_form': user_form,
+        'company_form': company_form,
     }
 
     return render (request, 'users/profile.html', context)
