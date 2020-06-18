@@ -144,7 +144,6 @@ a.site-footer {
 }
 
 /* LOGIN PAGE SECTION */
-
 #loginform {
   width: 50%;
   background-color: white;
@@ -167,6 +166,36 @@ a.site-footer {
 #loginform h3 {
   padding: 0px auto 30px auto;
   margin-bottom: 40px;
+}
+
+@media only screen and (max-width : 376px) {
+
+#loginform {
+    width: 90%;
+    background-color: white;
+    border: 1px solid black;
+    margin: 10px auto 10px auto;
+    padding: 20px 5px 20px 5px;
+    text-align: center;
+  }
+
+  #loginform p {
+    padding: 2px;
+    font-weight:600;
+    word-wrap: break-word;
+    font-size: 0.8em;
+  }
+
+  #loginform label {
+    padding: 10px;
+    font-weight:600;
+  }
+
+  #loginform h3 {
+    padding: 0px auto 30px auto;
+    margin-bottom: 40px;
+  }
+
 }
 
 
