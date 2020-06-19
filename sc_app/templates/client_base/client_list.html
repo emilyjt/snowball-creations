@@ -46,11 +46,7 @@
         </div>
         {% for company in subscription.company_set.all %}
         <div class="col col-1"
-          {% if company.created_at %}
-            <td>{{ company.created_at }}</td>
-          {% else %}
-            <td><p></p></td>
-          {% endif %}
+            <td>{{ company.date_created }}</td>
         </div>
         <div class="col col-1"
           <td>{{ company.name }}</td>
