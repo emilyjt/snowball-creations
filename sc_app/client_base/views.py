@@ -7,6 +7,8 @@ from users.models import UserProfile
 
 # Create your views here.
 class ClientListView(ListView):
-    model = Company
+    model = Subscription
     template_name = 'client_base/client_list.html'
-    queryset = Company.objects.all()
+    queryset = Subscription.objects.all()
+
+    Subscription.objects.filter().company.all()

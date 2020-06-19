@@ -310,3 +310,15 @@ a.site-footer {
 .faq-button {
   background-color: transparent;
 }
+
+/* CLIENT BASE PAGE settings */
+
+
+.clientpanel {
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  margin: 20px auto 20px auto;
+  padding: 20px;
+  overflow: hidden;
+}
