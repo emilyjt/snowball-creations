@@ -321,4 +321,25 @@ a.site-footer {
   margin: 20px auto 20px auto;
   padding: 20px;
   overflow: hidden;
+  word-wrap: break-word;
+  font-size: 0.6em;
+  text-align: center;
+}
+
+.client-base-headers {
+  border: 1px solid black;
+  margin: 2px auto 2px auto;
+  padding: 2px;
+  overflow: hidden;
+  word-wrap: break-word;
+  font-weight: bold;
+  font-size: 10px;
+}
+
+.client-base-row {
+  border: 1px solid black;
+  margin: 2px auto 2px auto;
+  padding: 2px;
+  overflow: hidden;
+  word-wrap: break-word;
 }
