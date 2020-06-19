@@ -64,7 +64,7 @@ class Company(models.Model):
     tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, blank=True, on_delete=models.CASCADE)
     subscriptions = models.ManyToManyField(Subscription, blank=True)
     source = models.CharField(max_length=200)
-    # created_at = models.DateTimeField(auto_now_add=True, default=datetime.now, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True)
 
     # class Meta:
     #     ordering = ['name']

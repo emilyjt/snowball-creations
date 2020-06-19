@@ -10,5 +10,3 @@ class ClientListView(ListView):
     model = Subscription
     template_name = 'client_base/client_list.html'
     queryset = Subscription.objects.all()
-
-    Subscription.objects.filter().company.all()

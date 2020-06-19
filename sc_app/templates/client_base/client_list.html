@@ -1,36 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <h1>Client Base</h1>
-
 <div class="container clientpanel">
     {% for subscription in object_list %}
       <div class="row mx-auto">
         <div class="col col-1">
           <td>{{ subscription.id }}</td>
         </div>
-        <div class="col">
-          <td>{{ subscription.company }}</td>
+        {% for company in subscription.company_set.all %}
+        <div class="col"
+          <td>{{ company.name }}</td>
         </div>
         <div class="col"
-          <td>{{ subscription.company.name }}</td>
-        </div>
-        <div class="col"
-          <td>{{ subscription.company.primary_contact.name }}</td>
-        </div>
-        <div class="col"
-          <td>{{ company.subscriptions.all }}</td>
+          <td>{{ company.primary_contact.name }}</td>
         </div>
         <div class="col"
           <td>{{ company.url }}</td>
         </div>
+        {% endfor %}
       </div>
       {% endfor %}
-
 </div>
-
 {% endblock content %}
-
-<!-- for each subscription from company in object list
-print out a row of info. -->
