@@ -343,3 +343,57 @@ a.site-footer {
   overflow: hidden;
   word-wrap: break-word;
 }
+
+/* New client base styling */
+
+.new-client-base {
+  text-align: center;
+  font-size: small;
+  background-color: white;
+  padding: 10px;
+}
+
+.new-client-base-headers {
+  padding: 2px;
+  background-color: slategray;
+  color: white;
+}
+
+.new-client-base-headers > div {
+  width: 9%;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.new-client-base-row {
+  word-wrap: break-word;
+  padding: 2px;
+  border-bottom: 2px solid slategray;
+  cursor: default;
+}
+
+.new-client-base-row:nth-child(odd) {
+  background-color: lightgray;
+}
+
+
+@media (any-hover: hover) {
+  .new-client-base-row:hover {
+    background-color: lightsteelblue;
+  }
+}
+
+.new-client-base-row > div {
+  width: 9%;
+  padding: 10px;
+}
+
+@media only screen and (max-width : 990px) {
+  .new-client-base {
+    text-align: center;
+    font-size: x-small;
+    background-color: white;
+    padding: 10px;
+    word-wrap: break-word;
+  }
+}

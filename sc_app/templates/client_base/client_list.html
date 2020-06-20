@@ -2,81 +2,41 @@
 
 {% block content %}
 <h1>Client Base</h1>
-<div class="container clientpanel">
-  <div class="row mx-auto client-base-headers">
-    <div class="col col-1"
-      <td>ID</td>
+
+<div class="new-client-base">
+  <div>
+    <div class="new-client-base-headers" style="display: flex; justify-content: space-evenly; align-items: center;">
+      <div>ID</div>
+      <div>Created</div>
+      <div>Company Name</div>
+      <div>Contact Name</div>
+      <div>Contact Email</div>
+      <div>Social Username</div>
+      <div>Social URL</div>
+      <div>Service</div>
+      <div>Price</div>
+      <div>Subscription Create Date</div>
+      <div>Subscription Start Date</div>
     </div>
-    <div class="col col-1"
-      <td>Created</td>
-    </div>
-    <div class="col col-1"
-      <td>Company name</td>
-    </div>
-    <div class="col col-1"
-      <td>Contact Name</td>
-    </div>
-    <div class="col col-2"
-      <td>Contact Email</td>
-    </div>
-    <div class="col col-1"
-      <td>Social Username</td>
-    </div>
-    <div class="col col-1"
-      <td>Social URL</td>
-    </div>
-    <div class="col col-1"
-      <td>Service</td>
-    </div>
-    <div class="col col-1"
-      <td>Price</td>
-    </div>
-    <div class="col col-1"
-      <td>Subscription Create Date</td>
-    </div>
-    <div class="col col-1"
-      <td>Subscription Start Date</td>
-    </div>
-  </div>
 
     {% for subscription in object_list %}
-      <div class="row mx-auto client-base-row">
-        <div class="col col-1">
-          <td>{{ subscription.id }}</td>
-        </div>
-        {% for company in subscription.company_set.all %}
-        <div class="col col-1"
-            <!-- <td>{{ company.date_created }}</td> -->
-        </div>
-        <div class="col col-1"
-          <td>{{ company.name }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ company.primary_contact.name }}</td>
-        </div>
-        <div class="col col-2"
-          <td>{{ company.primary_contact.email }}</td>
-        </div>
-        {% endfor %}
-        <div class="col col-1"
-          <td>{{ subscription.social_profile.username }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ subscription.social_profile.url }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ subscription.service_used.name }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ subscription.service_used.price }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ subscription.created_at }}</td>
-        </div>
-        <div class="col col-1"
-          <td>{{ subscription.date_started }}</td>
-        </div>
-      </div>
-      {% endfor %}
+    <div class="new-client-base-row" style="display: flex; justify-content: space-evenly; align-items: center; transition: 0.2s ease-in-out;">
+      <div>{{ subscription.id }}</div>
+      <div>{{ company.date_created }} --></div>
+      {% with subscription.company_set.all|first as company %}
+      <div>{{ company.name }}</div>
+      <div>{{ company.primary_contact.name }}</div>
+      <div>{{ company.primary_contact.email }}</div>
+      {% endwith %}
+      <div>{{ subscription.social_profile.username }}</div>
+      <div>{{ subscription.social_profile.url }}</div>
+      <div>{{ subscription.service_used.name }}</div>
+      <div>{{ subscription.service_used.price }}</div>
+      <div>{{ subscription.created_at }}</div>
+      <div>{{ subscription.date_started }}</div>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
 </div>
 {% endblock content %}
