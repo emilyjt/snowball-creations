@@ -217,9 +217,7 @@ a.site-footer {
 
 /* DASHBOARD CSS SECTION  */
 
-#faqbutton {
-  color: navy;
-}
+
 
 #totalpanel {
   background-color: white;
@@ -302,6 +300,10 @@ a.site-footer {
 
 /* FAQ SECTION OF DASHBOARD */
 
+#faqbutton {
+  color: white;
+}
+
 #faq-text {
   width: 90%;
   padding: 2px;
@@ -370,8 +372,8 @@ a.site-footer {
 
 .new-client-base-headers {
   padding: 2px;
-  background-color: slategray;
-  color: white;
+  background-color: #B3d8DB;
+  color: #304052;
 }
 
 .new-client-base-headers > div {
