@@ -25,7 +25,7 @@ class ClientListView(ListView):
         context['totalPrice'] = shortprice
 
         # Additional context for how many total clients currently.
-        
+
         context['totalNumber'] = len(Subscription.objects.all())
 
         return context

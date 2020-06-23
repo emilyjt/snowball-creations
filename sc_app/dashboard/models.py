@@ -46,7 +46,7 @@ class Service(models.Model):
 
 class Subscription(models.Model):
     social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
-    service_used = models.ForeignKey(Service, on_delete=models.CASCADE)
+    service_used = models.ForeignKey(Service, null=True, on_delete=models.SET_NULL)
     date_started = models.DateTimeField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
