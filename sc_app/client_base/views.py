@@ -29,3 +29,5 @@ class ClientListView(ListView):
         context['totalNumber'] = len(Subscription.objects.all())
 
         return context
+
+    ordering = ['created_at']
