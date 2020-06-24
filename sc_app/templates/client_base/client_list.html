@@ -6,7 +6,6 @@
 <div class="new-client-base">
   <div>
     <div class="new-client-base-headers" style="display: flex; justify-content: space-evenly; align-items: center;">
-      <div>ID</div>
       <div>Created</div>
       <div>Company Name</div>
       <div>Contact Name</div>
@@ -15,13 +14,13 @@
       <div>Social URL</div>
       <div>Service</div>
       <div>Price</div>
-      <div>Subscription Create Date</div>
-      <div>Subscription Start Date</div>
+      <div>Source</div>
+      <div>Sub. Create Date</div>
+      <div>Sub. Start Date</div>
     </div>
 
     {% for subscription in object_list %}
     <div class="new-client-base-row" style="display: flex; justify-content: space-evenly; align-items: center; transition: 0.2s ease-in-out;">
-      <div>{{ subscription.id }}</div>
       {% with subscription.company_set.all|first as company %}
       <div>{{ company.created_at|date:"d/m/y" }}</div>
       <div>{{ company.name }}</div>
@@ -29,9 +28,12 @@
       <div>{{ company.primary_contact.email|urlize }}</div>
       {% endwith %}
       <div>{{ subscription.social_profile.username }}</div>
-      <div>{{ subscription.social_profile.url|urlizetrunc:20 }}</div>
+      <div>{{ subscription.social_profile.url|urlizetrunc:50 }}</div>
       <div>{{ subscription.service_used.name }}</div>
       <div>{{ subscription.service_used.price|stringformat:"s"|slice:"2:" }}</div>
+      {% with subscription.company_set.all|first as company %}
+      <div>{{ company.source }}</div>
+      {% endwith %}
       <div>{{ subscription.created_at|date:"d/m/y" }}</div>
       <div>{{ subscription.date_started|date:"d/m/y" }}</div>
     </div>
