@@ -1,12 +1,14 @@
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
+from django.utils.translation import gettext_lazy as _
+
 from dashboard.models import (
-    User,
     Company,
-    SocialProfile,
     Service,
     SocialNetwork,
+    SocialProfile,
     Subscription,
+    User,
 )
 
 # class InLineSubscription(admin.TabularInline):
@@ -18,6 +20,15 @@ class CompanyAdmin(admin.ModelAdmin):
     list_editable = ("primary_contact", "url", "source")
     list_filter = ("name", "primary_contact", "source")
     search_fields = ("name", "primary_contact", "url", "source")
+
+    fieldsets = (
+        (None, {"fields": ("name", "url",)}),
+        (
+            _("Contact info"),
+            {"fields": ("primary_contact", "secondary_contact", "tertiary_contact")},
+        ),
+        (_("Other"), {"fields": ("subscriptions", "source", "created_at")},),
+    )
 
 
 class SocialProfileAdmin(admin.ModelAdmin):
