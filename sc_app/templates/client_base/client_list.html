@@ -31,9 +31,9 @@
       <div>{{ subscription.social_profile.username }}</div>
       <div>{{ subscription.social_profile.url|urlizetrunc:20 }}</div>
       <div>{{ subscription.service_used.name }}</div>
-      <div>{{ subscription.service_used.price }}</div>
-      <div>{{ subscription.created_at }}</div>
-      <div>{{ subscription.date_started }}</div>
+      <div>{{ subscription.service_used.price|stringformat:"s"|slice:"2:" }}</div>
+      <div>{{ subscription.created_at|date:"d/m/y" }}</div>
+      <div>{{ subscription.date_started|date:"d/m/y" }}</div>
     </div>
     {% endfor %}
     <!-- This is the total price row -->
