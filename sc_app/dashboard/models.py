@@ -48,8 +48,8 @@ class Subscription(models.Model):
     social_profile = models.ForeignKey(SocialProfile, on_delete=models.CASCADE)
     service_used = models.ForeignKey(Service, null=True, on_delete=models.SET_NULL)
     date_started = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True, editable=True)
+    updated_at = models.DateTimeField(auto_now=True, editable=True)
 
     class Meta:
         ordering = ['social_profile', 'service_used']
@@ -65,7 +65,7 @@ class Company(models.Model):
     tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, blank=True, on_delete=models.CASCADE)
     subscriptions = models.ManyToManyField(Subscription, blank=True)
     source = models.CharField(max_length=200)
-    created_at = models.DateTimeField(default=timezone.now)
+    created_at = models.DateTimeField(default=timezone.now, editable=True)
     # date_created = models.DateTimeField(_('date created'), default=timezone.now)
 
     class Meta:
