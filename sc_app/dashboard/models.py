@@ -1,8 +1,8 @@
 from djmoney.models.fields import MoneyField
 from django.db import models
 from django.contrib.auth.models import User
-# from django.utils import timezone
-# from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
@@ -65,6 +65,7 @@ class Company(models.Model):
     tertiary_contact = models.ForeignKey(User,  related_name='user_tertiary_contact', null=True, blank=True, on_delete=models.CASCADE)
     subscriptions = models.ManyToManyField(Subscription, blank=True)
     source = models.CharField(max_length=200)
+    created_at = models.DateTimeField(default=timezone.now)
     # date_created = models.DateTimeField(_('date created'), default=timezone.now)
 
     # class Meta:
