@@ -68,8 +68,8 @@ class Company(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
     # date_created = models.DateTimeField(_('date created'), default=timezone.now)
 
-    # class Meta:
-    #     ordering = ['name']
+    class Meta:
+        ordering = ['name', 'created_at']
 
     def __str__(self):
         return self.name
