@@ -25,11 +25,11 @@
       <div>{{ company.date_created }} --></div>
       {% with subscription.company_set.all|first as company %}
       <div>{{ company.name }}</div>
-      <div>{{ company.primary_contact.name }}</div>
-      <div>{{ company.primary_contact.email }}</div>
+      <div>{{ company.primary_contact.first_name }} {{ company.primary_contact.last_name }}</div>
+      <div>{{ company.primary_contact.email|urlize }}</div>
       {% endwith %}
       <div>{{ subscription.social_profile.username }}</div>
-      <div>{{ subscription.social_profile.url }}</div>
+      <div>{{ subscription.social_profile.url|urlizetrunc:20 }}</div>
       <div>{{ subscription.service_used.name }}</div>
       <div>{{ subscription.service_used.price }}</div>
       <div>{{ subscription.created_at }}</div>
