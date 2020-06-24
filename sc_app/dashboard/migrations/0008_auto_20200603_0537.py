@@ -9,22 +9,29 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('dashboard', '0007_auto_20200603_0532'),
+        ("dashboard", "0007_auto_20200603_0532"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='company',
-            name='secondary_contact',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_secondary_contact', to=settings.AUTH_USER_MODEL),
+            model_name="company",
+            name="secondary_contact",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_secondary_contact",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
-        migrations.RemoveField(
-            model_name='company',
-            name='primary_contact',
-        ),
+        migrations.RemoveField(model_name="company", name="primary_contact",),
         migrations.AddField(
-            model_name='company',
-            name='primary_contact',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_primary_contact', to=settings.AUTH_USER_MODEL),
+            model_name="company",
+            name="primary_contact",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_primary_contact",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

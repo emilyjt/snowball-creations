@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0012_remove_subscription_name'),
+        ("dashboard", "0012_remove_subscription_name"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='service',
-            name='details',
+            model_name="service",
+            name="details",
             field=models.TextField(max_length=1000, null=True),
         ),
     ]

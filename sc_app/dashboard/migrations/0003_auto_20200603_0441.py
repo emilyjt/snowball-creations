@@ -7,22 +7,39 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0002_auto_20200530_0757'),
+        ("dashboard", "0002_auto_20200530_0757"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='SocialNetwork',
+            name="SocialNetwork",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('network_name', models.CharField(max_length=200)),
-                ('network_url', models.URLField()),
-                ('network_logo', models.ImageField(upload_to='sc_app/static/media/socialnetworklogos')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("network_name", models.CharField(max_length=200)),
+                ("network_url", models.URLField()),
+                (
+                    "network_logo",
+                    models.ImageField(
+                        upload_to="sc_app/static/media/socialnetworklogos"
+                    ),
+                ),
             ],
         ),
         migrations.AlterField(
-            model_name='socialprofile',
-            name='social_network',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='dashboard.SocialNetwork'),
+            model_name="socialprofile",
+            name="social_network",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="dashboard.SocialNetwork",
+            ),
         ),
     ]

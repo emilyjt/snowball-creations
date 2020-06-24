@@ -7,17 +7,16 @@ import django.utils.timezone
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0025_company_created_at'),
+        ("dashboard", "0025_company_created_at"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='company',
-            name='created_at',
-        ),
+        migrations.RemoveField(model_name="company", name="created_at",),
         migrations.AddField(
-            model_name='company',
-            name='date_created',
-            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='date created'),
+            model_name="company",
+            name="date_created",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now, verbose_name="date created"
+            ),
         ),
     ]

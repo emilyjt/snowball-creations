@@ -7,13 +7,18 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0022_auto_20200616_1002'),
+        ("dashboard", "0022_auto_20200616_1002"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='subscription',
-            name='company_using',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to='dashboard.Company'),
+            model_name="subscription",
+            name="company_using",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="dashboard.Company",
+            ),
         ),
     ]

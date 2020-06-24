@@ -10,33 +10,47 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('dashboard', '0016_auto_20200603_0643'),
+        ("dashboard", "0016_auto_20200603_0643"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='company',
-            name='secondary_contact',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_secondary_contact', to=settings.AUTH_USER_MODEL),
+            model_name="company",
+            name="secondary_contact",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_secondary_contact",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='subscriptions',
-            field=models.ManyToManyField(blank=True, to='dashboard.Subscription'),
+            model_name="company",
+            name="subscriptions",
+            field=models.ManyToManyField(blank=True, to="dashboard.Subscription"),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='tertiary_contact',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_tertiary_contact', to=settings.AUTH_USER_MODEL),
+            model_name="company",
+            name="tertiary_contact",
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_tertiary_contact",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
         migrations.AlterField(
-            model_name='company',
-            name='url',
+            model_name="company",
+            name="url",
             field=models.URLField(blank=True, max_length=400, null=True),
         ),
         migrations.AlterField(
-            model_name='service',
-            name='price',
-            field=djmoney.models.fields.MoneyField(decimal_places=0, default_currency='GBP', max_digits=19),
+            model_name="service",
+            name="price",
+            field=djmoney.models.fields.MoneyField(
+                decimal_places=0, default_currency="GBP", max_digits=19
+            ),
         ),
     ]

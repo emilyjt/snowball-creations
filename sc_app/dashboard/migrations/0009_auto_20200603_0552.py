@@ -7,54 +7,59 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0008_auto_20200603_0537'),
+        ("dashboard", "0008_auto_20200603_0537"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='service',
-            options={'ordering': ['name', 'price']},
+            name="service", options={"ordering": ["name", "price"]},
         ),
-        migrations.RemoveField(
-            model_name='company',
-            name='social_profiles',
-        ),
-        migrations.RemoveField(
-            model_name='service',
-            name='created_at',
-        ),
-        migrations.RemoveField(
-            model_name='service',
-            name='date_started',
-        ),
-        migrations.RemoveField(
-            model_name='service',
-            name='updated_at',
-        ),
+        migrations.RemoveField(model_name="company", name="social_profiles",),
+        migrations.RemoveField(model_name="service", name="created_at",),
+        migrations.RemoveField(model_name="service", name="date_started",),
+        migrations.RemoveField(model_name="service", name="updated_at",),
         migrations.AddField(
-            model_name='service',
-            name='details',
+            model_name="service",
+            name="details",
             field=models.CharField(max_length=1000, null=True),
         ),
         migrations.AddField(
-            model_name='service',
-            name='url',
-            field=models.URLField(null=True),
+            model_name="service", name="url", field=models.URLField(null=True),
         ),
         migrations.CreateModel(
-            name='Subscription',
+            name="Subscription",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date_started', models.DateTimeField(null=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('service_used', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dashboard.Service')),
-                ('social_profile', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='dashboard.SocialProfile')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date_started", models.DateTimeField(null=True)),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "service_used",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="dashboard.Service",
+                    ),
+                ),
+                (
+                    "social_profile",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="dashboard.SocialProfile",
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='company',
-            name='subscriptions',
-            field=models.ManyToManyField(to='dashboard.Subscription'),
+            model_name="company",
+            name="subscriptions",
+            field=models.ManyToManyField(to="dashboard.Subscription"),
         ),
     ]

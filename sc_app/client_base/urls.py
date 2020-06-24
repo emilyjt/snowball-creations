@@ -3,8 +3,8 @@ from . import views
 from .views import ClientListView
 from django.views.generic import ListView
 
-app_name = 'client_base'
+app_name = "client_base"
 
 urlpatterns = [
-    path('', ClientListView.as_view(), name='clientslist'),
+    path("", ClientListView.as_view(), name="clientslist"),
 ]

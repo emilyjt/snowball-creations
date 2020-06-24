@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0018_auto_20200604_0623'),
+        ("dashboard", "0018_auto_20200604_0623"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='company',
-            name='subscriptions',
-            field=models.ManyToManyField(blank=True, null=True, to='dashboard.Subscription'),
+            model_name="company",
+            name="subscriptions",
+            field=models.ManyToManyField(
+                blank=True, null=True, to="dashboard.Subscription"
+            ),
         ),
     ]

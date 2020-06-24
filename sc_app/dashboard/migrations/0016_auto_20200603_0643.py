@@ -6,12 +6,9 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0015_company_tertiary_contact'),
+        ("dashboard", "0015_company_tertiary_contact"),
     ]
 
     operations = [
-        migrations.AlterModelOptions(
-            name='company',
-            options={},
-        ),
+        migrations.AlterModelOptions(name="company", options={},),
     ]

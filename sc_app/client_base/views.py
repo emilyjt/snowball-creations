@@ -1,14 +1,21 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.db import models
-from dashboard.models import User, SocialNetwork, SocialProfile, Service, Subscription, Company
+from dashboard.models import (
+    User,
+    SocialNetwork,
+    SocialProfile,
+    Service,
+    Subscription,
+    Company,
+)
 from users.models import UserProfile
 
 
 # Create your views here.
 class ClientListView(ListView):
     model = Subscription
-    template_name = 'client_base/client_list.html'
+    template_name = "client_base/client_list.html"
     queryset = Subscription.objects.all()
 
     # Defines an alternate context to return (other than the standard queryset)
@@ -18,16 +25,16 @@ class ClientListView(ListView):
         # the existing price (there's probably a better way to do this, but I was short on time)
         price = 0
         for sub in Subscription.objects.all():
-            price+=sub.service_used.price
+            price += sub.service_used.price
         # Call this context using the name 'totalPrice'
         shortprice = str(price)[2:]
 
-        context['totalPrice'] = shortprice
+        context["totalPrice"] = shortprice
 
         # Additional context for how many total clients currently.
 
-        context['totalNumber'] = len(Subscription.objects.all())
+        context["totalNumber"] = len(Subscription.objects.all())
 
         return context
 
-    ordering = ['created_at']
+    ordering = ["created_at"]

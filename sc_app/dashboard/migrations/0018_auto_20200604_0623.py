@@ -7,13 +7,15 @@ import djmoney.models.fields
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0017_auto_20200604_0619'),
+        ("dashboard", "0017_auto_20200604_0619"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='service',
-            name='price',
-            field=djmoney.models.fields.MoneyField(decimal_places=0, default_currency='GBP', max_digits=12),
+            model_name="service",
+            name="price",
+            field=djmoney.models.fields.MoneyField(
+                decimal_places=0, default_currency="GBP", max_digits=12
+            ),
         ),
     ]

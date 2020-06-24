@@ -9,13 +9,18 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('dashboard', '0014_auto_20200603_0608'),
+        ("dashboard", "0014_auto_20200603_0608"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='company',
-            name='tertiary_contact',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, related_name='user_tertiary_contact', to=settings.AUTH_USER_MODEL),
+            model_name="company",
+            name="tertiary_contact",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="user_tertiary_contact",
+                to=settings.AUTH_USER_MODEL,
+            ),
         ),
     ]

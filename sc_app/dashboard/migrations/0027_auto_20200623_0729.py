@@ -7,17 +7,18 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0026_auto_20200619_1920'),
+        ("dashboard", "0026_auto_20200619_1920"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='company',
-            name='date_created',
-        ),
+        migrations.RemoveField(model_name="company", name="date_created",),
         migrations.AlterField(
-            model_name='subscription',
-            name='service_used',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.SET_NULL, to='dashboard.Service'),
+            model_name="subscription",
+            name="service_used",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to="dashboard.Service",
+            ),
         ),
     ]

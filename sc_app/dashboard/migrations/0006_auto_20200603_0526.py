@@ -6,12 +6,11 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0005_auto_20200603_0525'),
+        ("dashboard", "0005_auto_20200603_0525"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='socialnetwork',
-            options={'ordering': ['name', 'logo', 'url']},
+            name="socialnetwork", options={"ordering": ["name", "logo", "url"]},
         ),
     ]

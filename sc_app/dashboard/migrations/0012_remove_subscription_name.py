@@ -6,12 +6,9 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('dashboard', '0011_subscription_name'),
+        ("dashboard", "0011_subscription_name"),
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='subscription',
-            name='name',
-        ),
+        migrations.RemoveField(model_name="subscription", name="name",),
     ]
